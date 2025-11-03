@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Star, Zap, Wrench, Palette, Package, MapPin, Instagram, MessageCircle } from 'lucide-react';
+import { Star, Zap, Wrench, Palette, Package, MapPin, Instagram, MessageCircle, Lightbulb, Shield, Truck } from 'lucide-react';
 import { supabase, StoreSettings } from '../lib/supabase';
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   const handleWhatsAppClick = () => {
-    const number = settings?.whatsapp_number || '5562946265700';
+    const number = settings?.whatsapp_number || '5562994626570';
     window.open(`https://wa.me/${number}?text=Olá!%20Quero%20comprar%20a%20Fita%20de%20LED%20RGB2538%20da%20RGB%20Store.`, '_blank');
   };
 
@@ -39,19 +39,20 @@ export default function Home() {
   };
 
   const galleryImages = settings?.gallery_images || [
+    '/90_fita_cob_rgb_12v_rolo_5m_810led_m_16743_3_31447220d4e10689c4ed7dc3d697fea2 copy.webp',
+    '/61wkGgBFP5L copy.jpg',
+    '/6272368800-smhyuiqtuj copy.webp',
+    '/ledSetupGamer copy.jpg',
+    '/90_fita_cob_rgb_12v_rolo_5m_810led_m_16743_3_31447220d4e10689c4ed7dc3d697fea2 copy copy.webp',
+    '/fita_cob_rgb_12v_rolo_5m_810led_m_16743_1_d6ce8e81d4768165f12d74b319c66678.webp',
+    '/IMG-20251014-WA0007 copy.jpg',
     '/IMG-20251014-WA0001.jpg',
-    '/IMG-20251014-WA0002.jpg',
-    '/IMG-20251014-WA0003.jpg',
-    '/IMG-20251014-WA0005.jpg',
-    '/IMG-20251014-WA0006.jpg',
-    'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600',
-    'https://images.pexels.com/photos/6044266/pexels-photo-6044266.jpeg?auto=compress&cs=tinysrgb&w=600',
-    'https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&w=600'
+    '/IMG-20251014-WA0002.jpg'
   ];
 
   const productPrice = settings?.product_price || 89.99;
   const freightMessage = settings?.freight_message || 'Taxa de entrega: R$15,00 | Frete grátis para compras acima de R$150!';
-  const heroImage = settings?.hero_image || '/IMG-20251014-WA0001.jpg';
+  const heroImage = settings?.hero_image || '/fita_cob_rgb_12v_rolo_5m_810led_m_16743_2_5a1f52ff76f92b7a82d8718fff78cc16.webp';
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -69,6 +70,7 @@ export default function Home() {
             <button onClick={() => scrollToSection('inicio')} className="hover:text-cyan-400 transition-colors">Início</button>
             <button onClick={() => scrollToSection('galeria')} className="hover:text-cyan-400 transition-colors">Galeria</button>
             <button onClick={() => scrollToSection('descricao')} className="hover:text-cyan-400 transition-colors">Descrição</button>
+            <button onClick={() => scrollToSection('especificacoes')} className="hover:text-cyan-400 transition-colors">Especificações</button>
             <button onClick={() => scrollToSection('avaliacoes')} className="hover:text-cyan-400 transition-colors">Avaliações</button>
             <button onClick={() => scrollToSection('contato')} className="hover:text-cyan-400 transition-colors">Contato</button>
           </div>
@@ -136,7 +138,7 @@ export default function Home() {
             Galeria de Ambientes
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {galleryImages.map((img, i) => (
               <div key={i} className="relative group overflow-hidden rounded-lg border border-cyan-500/30 hover:border-pink-500/50 transition-all">
                 <img
@@ -197,8 +199,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Especificações Técnicas */}
+      <section id="especificacoes" className="py-16 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 text-transparent bg-clip-text">
+            Especificações Técnicas
+          </h2>
+
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-cyan-500/30">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <Lightbulb className="w-7 h-7 text-cyan-400" />
+                Especificações
+              </h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Comprimento: 5 metros</li>
+                <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Tipo: LED RGB COB (Chip on Board)</li>
+                <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Voltagem: 12V DC</li>
+                <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Cores: Mais de 16 milhões de cores</li>
+                <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Modo: Automático com controle remoto</li>
+                <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Fixação: Adesivo 3M de alta qualidade</li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-cyan-500/30">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <Shield className="w-7 h-7 text-pink-400" />
+                Vantagens
+              </h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Iluminação uniforme e sem pontos escuros</li>
+                <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Consumo de energia muito baixo</li>
+                <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Vida útil superior a 50.000 horas</li>
+                <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Instalação super fácil e rápida</li>
+                <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Compatível com qualquer ambiente</li>
+                <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Garantia de 12 meses</li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-2 bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-cyan-500/30">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <Truck className="w-7 h-7 text-green-400" />
+                Informações de Entrega
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <p className="text-cyan-400 font-semibold mb-2">Prazo de Entrega</p>
+                  <p className="text-gray-300">Goiás e entorno: 2 a 5 dias úteis</p>
+                  <p className="text-gray-300 text-sm mt-2">Outras regiões: 7 a 15 dias úteis</p>
+                </div>
+                <div>
+                  <p className="text-cyan-400 font-semibold mb-2">Frete</p>
+                  <p className="text-gray-300">Taxa: R$ 15,00</p>
+                  <p className="text-gray-300 text-sm mt-2">Grátis em compras acima de R$ 150,00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Cálculo de Frete */}
-      <section className="py-16 px-4 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto max-w-2xl">
           <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-cyan-500/30">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
@@ -314,7 +376,7 @@ export default function Home() {
 
             <div className="flex gap-4">
               <a
-                href={`https://wa.me/${settings?.whatsapp_number || '55 62 9462-6570'}`}
+                href={`https://wa.me/${settings?.whatsapp_number || '5562994626570'}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform hover:shadow-[0_0_20px_rgba(34,197,94,0.5)]"
