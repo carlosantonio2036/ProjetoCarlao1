@@ -39,7 +39,6 @@ export default function Home() {
   };
 
   const galleryImages = settings?.gallery_images || [
-    '/90_fita_cob_rgb_12v_rolo_5m_810led_m_16743_3_31447220d4e10689c4ed7dc3d697fea2 copy.webp',
     '/61wkGgBFP5L copy.jpg',
     '/6272368800-smhyuiqtuj copy.webp',
     '/ledSetupGamer copy.jpg',
@@ -47,7 +46,12 @@ export default function Home() {
     '/fita_cob_rgb_12v_rolo_5m_810led_m_16743_1_d6ce8e81d4768165f12d74b319c66678.webp',
     '/IMG-20251014-WA0007 copy.jpg',
     '/IMG-20251014-WA0001.jpg',
-    '/IMG-20251014-WA0002.jpg'
+    '/IMG-20251014-WA0002.jpg',
+    '/IMG-20251103-WA0010.jpg',
+    '/IMG-20251103-WA0009.jpg',
+    '/IMG-20251103-WA0008.jpg',
+    '/IMG-20251103-WA0006.jpg',
+    '/IMG-20251103-WA0005.jpg'
   ];
 
   const productPrice = settings?.product_price || 89.99;
@@ -216,7 +220,6 @@ export default function Home() {
                 <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Comprimento: 5 metros</li>
                 <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Tipo: LED RGB COB (Chip on Board)</li>
                 <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Voltagem: 12V DC</li>
-                <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Cores: Mais de 16 milhões de cores</li>
                 <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Modo: Automático com controle remoto</li>
                 <li className="flex gap-3"><span className="text-cyan-400 font-bold">•</span> Fixação: Adesivo 3M de alta qualidade</li>
               </ul>
@@ -233,7 +236,6 @@ export default function Home() {
                 <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Vida útil superior a 50.000 horas</li>
                 <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Instalação super fácil e rápida</li>
                 <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Compatível com qualquer ambiente</li>
-                <li className="flex gap-3"><span className="text-pink-400 font-bold">•</span> Garantia de 12 meses</li>
               </ul>
             </div>
 
@@ -384,7 +386,7 @@ export default function Home() {
                 <MessageCircle className="w-6 h-6" />
               </a>
               <a
-                href="https://instagram.com/carlos.antoniioo"
+                href="https://instagram.com/rgbstore_of"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform hover:shadow-[0_0_20px_rgba(236,72,153,0.5)]"
